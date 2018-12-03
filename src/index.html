@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Stencil Component Starter</title>
+    <script src="/build/convergence.js"></script>
 
 </head>
+<!-- chosen-option='{ "label": "Poland", "value": "PL" }'
+options='[
+    { "label": "Poland", "value": "PL" },
+    { "label": "Germany", "value": "DE" },
+    { "label": "Sweden", "value": "SE" },
+    { "label": "Norway", "value": "NO" }
+]' -->
 <body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
+    <featured-dropdown id="ft-dropdown" is-expanded>
+        <img class="img" src="/build/angle-arrow-down.svg" slot="dropdown-arrow" />
+    </featured-dropdown>
+    <script>
+        const comp = document.getElementById('ft-dropdown');
+        comp.chosenOption = { "label": "Poland", "value": "PL" };
+        comp.options = [
+            { "label": "Poland", "value": "PL" },
+            { "label": "Germany", "value": "DE" },
+            { "label": "Sweden", "value": "SE" },
+            { "label": "Norway", "value": "NO" }
+        ];
+    </script>
 </body>
+
 </html>

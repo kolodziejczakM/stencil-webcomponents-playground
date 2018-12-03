@@ -8,62 +8,71 @@
 import '@stencil/core';
 
 
+import {
+  Option,
+} from './components/featured-dropdown/interfaces';
 
 
 export namespace Components {
 
-  interface MyComponent {
+  interface FeaturedDropdown {
     /**
-    * The first name
+    * Option that is shown as selected one.
     */
-    'first': string;
+    'chosenOption': Option;
+    'isExpanded': boolean;
     /**
-    * The last name
+    * Callback that will be called on every chosen option change
     */
-    'last': string;
+    'onChangeHandler': Function;
     /**
-    * The middle name
+    * List of selectable options that dropdown contains.
     */
-    'middle': string;
+    'options': Option[];
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface FeaturedDropdownAttributes extends StencilHTMLAttributes {
     /**
-    * The first name
+    * Option that is shown as selected one.
     */
-    'first'?: string;
+    'chosenOption'?: Option;
+    'isExpanded'?: boolean;
     /**
-    * The last name
+    * Callback that will be called on every chosen option change
     */
-    'last'?: string;
+    'onChangeHandler'?: Function;
     /**
-    * The middle name
+    * Event emitted on every option change
     */
-    'middle'?: string;
+    'onDropdownValueChanged'?: (event: CustomEvent) => void;
+    /**
+    * List of selectable options that dropdown contains.
+    */
+    'options'?: Option[];
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'MyComponent': Components.MyComponent;
+    'FeaturedDropdown': Components.FeaturedDropdown;
   }
 
   interface StencilIntrinsicElements {
-    'my-component': Components.MyComponentAttributes;
+    'featured-dropdown': Components.FeaturedDropdownAttributes;
   }
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLFeaturedDropdownElement extends Components.FeaturedDropdown, HTMLStencilElement {}
+  var HTMLFeaturedDropdownElement: {
+    prototype: HTMLFeaturedDropdownElement;
+    new (): HTMLFeaturedDropdownElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement
+    'featured-dropdown': HTMLFeaturedDropdownElement
   }
 
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'featured-dropdown': HTMLFeaturedDropdownElement;
   }
 
 
