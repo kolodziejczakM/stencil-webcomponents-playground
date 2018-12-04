@@ -1,16 +1,10 @@
 /*! Built with http://stenciljs.com */
-const { h } = window.Convergence;
+import { h } from '../convergence.core.js';
 
 class FeaturedDropdown {
     constructor() {
         this.isExpanded = false;
-        /**
-         * Option that is shown as selected one.
-         */
         this.chosenOption = { label: '(no options)', value: null };
-        /**
-         * List of selectable options that dropdown contains.
-         */
         this.options = [];
         this.onChange = (event) => {
             const selectedOption = JSON.parse(event.target.getAttribute('value'));
@@ -35,7 +29,6 @@ class FeaturedDropdown {
     onIsExpandedChange(newValue) {
         console.log('New value of expanded is: : ', newValue);
     }
-    // @State() isExpanded: boolean;
     componentDidLoad() {
         document.addEventListener('click', this.onOutsideClick);
     }
@@ -86,7 +79,7 @@ class FeaturedDropdown {
             "cancelable": true,
             "composed": true
         }]; }
-    static get style() { return ":host,\n:host * {\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n}\n\n:host {\n    --light-gray: #d3d3d3;\n    --gray: #a9a9a9;\n    --black: #000;\n    --white: #fff;\n    --icon-dimension: 25px;\n\n    font-family: 'sans-serif, Helvetica';\n    font-size: 14px;\n    cursor: pointer;\n    color: var(--black);\n}\n\n.dropdown {\n    position: relative;\n    border: 1px solid var(--gray);\n    border-radius: 5px;\n}\n\n.selected-option {\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: justify;\n    justify-content: space-between;\n    -ms-flex-align: center;\n    align-items: center;\n    padding: 5px 10px;\n}\n\n.options {\n    display: none;\n}\n\n.options--expanded {\n    position: absolute;\n    border: 1px solid var(--gray);\n    width: 100%;\n    display: block;\n    padding: 0;\n    margin: 0;\n}\n\n.option {\n    padding: 10px;\n    background: var(--white);\n}\n\n.option:hover {\n    background: var(--light-gray);\n}\n\n::slotted(*) {\n    width: var(--icon-dimension);\n    height: var(--icon-dimension);\n}"; }
+    static get style() { return ".sc-featured-dropdown-h, .sc-featured-dropdown-h   *.sc-featured-dropdown{-webkit-box-sizing:border-box;box-sizing:border-box}.sc-featured-dropdown-h{--light-gray:#d3d3d3;--gray:#a9a9a9;--black:#000;--white:#fff;--icon-dimension:25px;font-family:\"sans-serif, Helvetica\";font-size:14px;cursor:pointer;color:var(--black)}.dropdown.sc-featured-dropdown{position:relative;border:1px solid var(--gray);border-radius:5px}.selected-option.sc-featured-dropdown{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;padding:5px 10px}.options.sc-featured-dropdown{display:none}.options--expanded.sc-featured-dropdown{position:absolute;border:1px solid var(--gray);width:100%;display:block;padding:0;margin:0}.option.sc-featured-dropdown{padding:10px;background:var(--white)}.option.sc-featured-dropdown:hover{background:var(--light-gray)}.sc-featured-dropdown-s > *{width:var(--icon-dimension);height:var(--icon-dimension)}"; }
 }
 
 export { FeaturedDropdown };

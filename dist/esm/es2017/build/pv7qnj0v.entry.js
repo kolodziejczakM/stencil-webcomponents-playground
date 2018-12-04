@@ -1,4 +1,7 @@
-export class FeaturedDropdown {
+/*! Built with http://stenciljs.com */
+import { h } from '../convergence.core.js';
+
+class FeaturedDropdown {
     constructor() {
         this.isExpanded = false;
         this.chosenOption = { label: '(no options)', value: null };
@@ -76,5 +79,7 @@ export class FeaturedDropdown {
             "cancelable": true,
             "composed": true
         }]; }
-    static get style() { return "/**style-placeholder:featured-dropdown:**/"; }
+    static get style() { return ":host,:host *{-webkit-box-sizing:border-box;box-sizing:border-box}:host{--light-gray:#d3d3d3;--gray:#a9a9a9;--black:#000;--white:#fff;--icon-dimension:25px;font-family:\"sans-serif, Helvetica\";font-size:14px;cursor:pointer;color:var(--black)}.dropdown{position:relative;border:1px solid var(--gray);border-radius:5px}.selected-option{display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between;-ms-flex-align:center;align-items:center;padding:5px 10px}.options{display:none}.options--expanded{position:absolute;border:1px solid var(--gray);width:100%;display:block;padding:0;margin:0}.option{padding:10px;background:var(--white)}.option:hover{background:var(--light-gray)}::slotted(*){width:var(--icon-dimension);height:var(--icon-dimension)}"; }
 }
+
+export { FeaturedDropdown };
