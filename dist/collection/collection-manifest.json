@@ -1,0 +1,61 @@
+{
+  "components": [
+    {
+      "tag": "featured-dropdown",
+      "dependencies": [],
+      "componentClass": "FeaturedDropdown",
+      "componentPath": "components/featured-dropdown/featured-dropdown.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/featured-dropdown/featured-dropdown.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "chosenOption",
+          "mutable": true,
+          "reflectToAttr": true,
+          "attr": "chosen-option"
+        },
+        {
+          "name": "isExpanded",
+          "type": "Boolean",
+          "mutable": true,
+          "reflectToAttr": true,
+          "attr": "is-expanded",
+          "watch": [
+            "onIsExpandedChange"
+          ]
+        },
+        {
+          "name": "onChangeHandler",
+          "attr": "on-change-handler"
+        },
+        {
+          "name": "options",
+          "mutable": true,
+          "reflectToAttr": true,
+          "attr": "options"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "dropdownValueChanged"
+        }
+      ],
+      "shadow": true
+    }
+  ],
+  "collections": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.15.2",
+    "typescriptVersion": "2.9.2"
+  },
+  "bundles": []
+}
