@@ -16,11 +16,14 @@ options='[
     { "label": "Norway", "value": "NO" }
 ]' -->
 <body>
-    <featured-dropdown id="ft-dropdown" is-expanded>
-        <img class="img" src="/build/angle-arrow-down.svg" slot="dropdown-arrow" />
+    <featured-dropdown id="ft-dropdown">
+        <img class="img" src="/assets/angle-arrow-down.svg" slot="dropdown-arrow" />
     </featured-dropdown>
+    <featured-button id="b" label="I'm a button"></featured-button>
     <script>
         const comp = document.getElementById('ft-dropdown');
+        const btn = document.getElementById('b');
+
         comp.chosenOption = { "label": "Poland", "value": "PL" };
         comp.options = [
             { "label": "Poland", "value": "PL" },
@@ -28,6 +31,11 @@ options='[
             { "label": "Sweden", "value": "SE" },
             { "label": "Norway", "value": "NO" }
         ];
+
+        btn.addEventListener('featuredButtonClicked', () => {
+            console.log('FeaturedButton clicked!');
+        });
+
     </script>
 </body>
 

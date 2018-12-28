@@ -1,6 +1,36 @@
 {
   "components": [
     {
+      "tag": "featured-button",
+      "dependencies": [],
+      "componentClass": "FeaturedButton",
+      "componentPath": "components/featured-button/featured-button.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/featured-button/featured-button.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "label",
+          "type": "String",
+          "reflectToAttr": true,
+          "attr": "label"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "featuredButtonClicked"
+        }
+      ],
+      "shadow": true
+    },
+    {
       "tag": "featured-dropdown",
       "dependencies": [],
       "componentClass": "FeaturedDropdown",

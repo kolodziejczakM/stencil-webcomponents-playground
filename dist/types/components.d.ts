@@ -15,6 +15,23 @@ import {
 
 export namespace Components {
 
+  interface FeaturedButton {
+    /**
+    * Text visible on the button
+    */
+    'label': string;
+  }
+  interface FeaturedButtonAttributes extends StencilHTMLAttributes {
+    /**
+    * Text visible on the button
+    */
+    'label'?: string;
+    /**
+    * Event emitted on every click
+    */
+    'onFeaturedButtonClicked'?: (event: CustomEvent) => void;
+  }
+
   interface FeaturedDropdown {
     /**
     * Option that is shown as selected one.
@@ -53,13 +70,21 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'FeaturedButton': Components.FeaturedButton;
     'FeaturedDropdown': Components.FeaturedDropdown;
   }
 
   interface StencilIntrinsicElements {
+    'featured-button': Components.FeaturedButtonAttributes;
     'featured-dropdown': Components.FeaturedDropdownAttributes;
   }
 
+
+  interface HTMLFeaturedButtonElement extends Components.FeaturedButton, HTMLStencilElement {}
+  var HTMLFeaturedButtonElement: {
+    prototype: HTMLFeaturedButtonElement;
+    new (): HTMLFeaturedButtonElement;
+  };
 
   interface HTMLFeaturedDropdownElement extends Components.FeaturedDropdown, HTMLStencilElement {}
   var HTMLFeaturedDropdownElement: {
@@ -68,10 +93,12 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'featured-button': HTMLFeaturedButtonElement
     'featured-dropdown': HTMLFeaturedDropdownElement
   }
 
   interface ElementTagNameMap {
+    'featured-button': HTMLFeaturedButtonElement;
     'featured-dropdown': HTMLFeaturedDropdownElement;
   }
 

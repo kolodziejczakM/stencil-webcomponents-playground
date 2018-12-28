@@ -37,7 +37,6 @@ export class FeaturedDropdown {
      */
     @Prop() onChangeHandler: Function
 
-
     @Watch('isExpanded')
     onIsExpandedChange(newValue: boolean) {
         console.log('New value of expanded is: : ', newValue);
