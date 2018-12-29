@@ -4,12 +4,14 @@
 import { defineCustomElement } from './convergence.core.js';
 import {
   FeaturedButton,
-  FeaturedDropdown
+  FeaturedDropdown,
+  FeaturedLog
 } from './convergence.components.js';
 
 export function defineCustomElements(win, opts) {
   return defineCustomElement(win, [
     FeaturedButton,
-    FeaturedDropdown
+    FeaturedDropdown,
+    FeaturedLog
   ], opts);
 }

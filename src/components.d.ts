@@ -66,17 +66,36 @@ export namespace Components {
     */
     'options'?: Option[];
   }
+
+  interface FeaturedLog {
+    /**
+    * Text visible on the button
+    */
+    'label': string;
+  }
+  interface FeaturedLogAttributes extends StencilHTMLAttributes {
+    /**
+    * Text visible on the button
+    */
+    'label'?: string;
+    /**
+    * Event emitted on every click
+    */
+    'onFeaturedLogClicked'?: (event: CustomEvent) => void;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'FeaturedButton': Components.FeaturedButton;
     'FeaturedDropdown': Components.FeaturedDropdown;
+    'FeaturedLog': Components.FeaturedLog;
   }
 
   interface StencilIntrinsicElements {
     'featured-button': Components.FeaturedButtonAttributes;
     'featured-dropdown': Components.FeaturedDropdownAttributes;
+    'featured-log': Components.FeaturedLogAttributes;
   }
 
 
@@ -92,14 +111,22 @@ declare global {
     new (): HTMLFeaturedDropdownElement;
   };
 
+  interface HTMLFeaturedLogElement extends Components.FeaturedLog, HTMLStencilElement {}
+  var HTMLFeaturedLogElement: {
+    prototype: HTMLFeaturedLogElement;
+    new (): HTMLFeaturedLogElement;
+  };
+
   interface HTMLElementTagNameMap {
     'featured-button': HTMLFeaturedButtonElement
     'featured-dropdown': HTMLFeaturedDropdownElement
+    'featured-log': HTMLFeaturedLogElement
   }
 
   interface ElementTagNameMap {
     'featured-button': HTMLFeaturedButtonElement;
     'featured-dropdown': HTMLFeaturedDropdownElement;
+    'featured-log': HTMLFeaturedLogElement;
   }
 
 

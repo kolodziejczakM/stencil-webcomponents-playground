@@ -79,6 +79,36 @@
         }
       ],
       "shadow": true
+    },
+    {
+      "tag": "featured-log",
+      "dependencies": [],
+      "componentClass": "FeaturedLog",
+      "componentPath": "components/featured-log/featured-log.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/featured-log/featured-log.css"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "label",
+          "type": "String",
+          "reflectToAttr": true,
+          "attr": "label"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "featuredLogClicked"
+        }
+      ],
+      "shadow": true
     }
   ],
   "collections": [],
